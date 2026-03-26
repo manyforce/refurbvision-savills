@@ -1,0 +1,12 @@
+.DS_Store
+.env
+node_modules/
+.vercel/
+*.log
+
+CLAUDE-base.md
+CLAUDE.md
+Screenshot*.png
+*.md
+!README.md
+.vercel

@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RefurbVision | Property Listing Upgrades &mdash; AI Renovation Visualisations for Estate Agents</title>
+  <meta name="description" content="Upgrade your property listings with AI-powered renovation visualisations. Before &amp; after renders, transformation videos, delivered in 24&ndash;48 hours. For premium UK estate agents.">
+  <meta property="og:title" content="RefurbVision | Property Listing Upgrades for Estate Agents">
+  <meta property="og:description" content="Upgrade your property listings with renovation visualisations, before &amp; after images, and transformation videos. For premium UK estate agents.">
+  <meta property="og:type" content="website">
+  <meta name="robots" content="index, follow">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#1B2A4A',
+            'navy-light': '#243656',
+            gold: '#C5A572',
+            'gold-light': '#D4BB8A',
+            cream: '#FAFAF8',
+            'cream-dark': '#E8E8E4',
+            teal: '#0D7377',
+            'teal-dark': '#0A5C5F',
+            charcoal: '#2D2D2D',
+          },
+          fontFamily: {
+            display: ['Playfair Display', 'serif'],
+            body: ['Inter', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+
+  <!-- Before/After Slider -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/styles.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="font-body text-charcoal bg-cream">
+
+  <!-- ========== NAV ========== -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/80 backdrop-blur-md border-b border-cream-dark/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 md:h-20">
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-2">
+          <div class="w-8 h-8 bg-navy/10 rounded-lg flex items-center justify-center">
+            <span class="text-gold font-display font-bold text-lg">R</span>
+          </div>
+          <span class="font-display font-bold text-xl text-navy transition-colors duration-300">RefurbVision</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#how-it-works" class="text-sm font-medium text-charcoal/70 hover:text-navy transition-colors duration-300">How It Works</a>
+          <a href="#gallery" class="text-sm font-medium text-charcoal/70 hover:text-navy transition-colors duration-300">Gallery</a>
+          <a href="#pricing" class="text-sm font-medium text-charcoal/70 hover:text-navy transition-colors duration-300">Pricing</a>
+          <a href="#faq" class="text-sm font-medium text-charcoal/70 hover:text-navy transition-colors duration-300">FAQ</a>
+          <a href="#contact" class="inline-flex items-center px-5 py-2.5 bg-teal text-white text-sm font-semibold rounded-lg hover:bg-teal-dark transition-colors">Get Started</a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-navy transition-colors duration-300" aria-label="Open menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Nav -->
+      <div id="mobile-menu" class="hidden md:hidden pb-4">
+        <div class="flex flex-col gap-3">
+          <a href="#how-it-works" class="text-sm font-medium text-charcoal/70 hover:text-navy py-2 transition-colors duration-300">How It Works</a>
+          <a href="#gallery" class="text-sm font-medium text-charcoal/70 hover:text-navy py-2 transition-colors duration-300">Gallery</a>
+          <a href="#pricing" class="text-sm font-medium text-charcoal/70 hover:text-navy py-2 transition-colors duration-300">Pricing</a>
+          <a href="#faq" class="text-sm font-medium text-charcoal/70 hover:text-navy py-2 transition-colors duration-300">FAQ</a>
+          <a href="#contact" class="inline-flex items-center justify-center px-5 py-2.5 bg-teal text-white text-sm font-semibold rounded-lg hover:bg-teal-dark transition-colors">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section id="hero" class="relative min-h-screen flex items-center bg-white">
+    <!-- Foreground Content -->
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 md:py-36 lg:py-44">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <!-- Left Column: Headline & CTA -->
+        <div class="text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 px-4 py-2 bg-navy/5 border border-navy/10 rounded-full mb-8 hero-stagger hero-stagger-1">
+            <span class="w-2 h-2 bg-gold rounded-full animate-pulse"></span>
+            <span class="text-xs font-semibold text-navy/70 uppercase tracking-widest">Built for Savills</span>
+          </div>
+          <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-navy mb-6 hero-stagger hero-stagger-2" style="line-height: 1.1;">
+            Imagine Every Savills Listing with <span class="text-gold">Renovation Vision.</span>
+          </h1>
+          <p class="text-lg md:text-xl text-charcoal/70 leading-relaxed mb-10 max-w-xl mx-auto lg:mx-0 hero-stagger hero-stagger-3">
+            AI-powered renovation visualisations that show buyers the true potential of every property. Before &amp; after renders plus cinematic transformation videos &mdash; applied across your entire portfolio.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start hero-stagger hero-stagger-4">
+            <a href="#contact" class="inline-flex items-center justify-center px-8 py-4 bg-teal text-white font-semibold rounded-lg hover:bg-teal-dark transition-all duration-300 shadow-lg shadow-teal/25 hover:shadow-xl hover:shadow-teal/30 hover:-translate-y-0.5">
+              Get in Touch
+              <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+            <a href="#demo" class="inline-flex items-center justify-center px-8 py-4 border-2 border-navy/20 text-navy font-semibold rounded-lg hover:border-navy/40 hover:bg-navy/5 transition-all duration-300 hover:-translate-y-0.5">
+              <svg class="mr-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              Watch Demo
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: Demo Video -->
+        <div class="hero-stagger hero-stagger-3">
+          <div class="rounded-2xl overflow-hidden shadow-2xl ring-1 ring-navy/10 relative group cursor-pointer video-wrapper">
+            <video
+              class="w-full"
+              preload="metadata"
+              playsinline
+            >
+              <source src="assets/video/savills-demo.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <!-- Play Button Overlay -->
+            <div class="play-overlay absolute inset-0 flex items-center justify-center bg-black/20 transition-opacity duration-300">
+              <div class="w-20 h-20 md:w-24 md:h-24 bg-white/90 rounded-full flex items-center justify-center shadow-2xl group-hover:bg-white group-hover:scale-110 transition-all duration-300">
+                <svg class="w-8 h-8 md:w-10 md:h-10 text-navy ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+            </div>
+          </div>
+          <p class="text-sm text-charcoal/50 mt-3 text-center"><a href="https://search.savills.com/property-detail/gbclrscos250399" target="_blank" rel="noopener noreferrer" class="underline hover:text-charcoal/70 transition-colors">View property on Savills</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== THE PROBLEM ========== -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center fade-in">
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-navy mb-6">
+          Buyers Can't See Past the Damp
+        </h2>
+        <p class="text-lg text-charcoal/70 leading-relaxed mb-12">
+          Properties that need work attract fewer offers and sell below their potential. Buyers scroll past dated kitchens and tired interiors because they simply <strong>can't imagine</strong> what the property could become. That's where we come in.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8 fade-in">
+        <div class="text-center p-6">
+          <div class="text-5xl font-display font-bold text-gold mb-2">40%</div>
+          <p class="text-charcoal/70">fewer enquiries on listings without renovation visualisations</p>
+        </div>
+        <div class="text-center p-6">
+          <div class="text-5xl font-display font-bold text-gold mb-2">73%</div>
+          <p class="text-charcoal/70">of buyers say they can't visualise renovation potential</p>
+        </div>
+        <div class="text-center p-6">
+          <div class="text-5xl font-display font-bold text-gold mb-2">2x</div>
+          <p class="text-charcoal/70">more interest in listings with renovation visualisations</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HOW IT WORKS ========== -->
+  <section id="how-it-works" class="py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 fade-in">
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-navy mb-4">
+          How It Works
+        </h2>
+        <p class="text-lg text-charcoal/70 max-w-2xl mx-auto">
+          From listing photos to marketing-ready assets in 24&ndash;48 hours.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 lg:gap-12">
+        <!-- Step 1 -->
+        <div class="fade-in relative">
+          <div class="bg-white rounded-2xl p-8 shadow-sm border border-cream-dark h-full">
+            <div class="w-12 h-12 bg-navy rounded-xl flex items-center justify-center mb-6">
+              <span class="text-gold font-display font-bold text-xl">1</span>
+            </div>
+            <h3 class="font-display text-xl font-bold text-navy mb-3">Send Us the Listing</h3>
+            <p class="text-charcoal/70 leading-relaxed">
+              Share the property listing link or upload the photos directly. That's all we need to get started on your Listing Pack.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="fade-in relative">
+          <div class="bg-white rounded-2xl p-8 shadow-sm border border-cream-dark h-full">
+            <div class="w-12 h-12 bg-navy rounded-xl flex items-center justify-center mb-6">
+              <span class="text-gold font-display font-bold text-xl">2</span>
+            </div>
+            <h3 class="font-display text-xl font-bold text-navy mb-3">We Create the Vision</h3>
+            <p class="text-charcoal/70 leading-relaxed">
+              Our AI generates photorealistic renovation renders for every room. You choose the style: modern, traditional, or premium finish. Every detail is architecturally plausible.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="fade-in relative">
+          <div class="bg-white rounded-2xl p-8 shadow-sm border border-cream-dark h-full">
+            <div class="w-12 h-12 bg-navy rounded-xl flex items-center justify-center mb-6">
+              <span class="text-gold font-display font-bold text-xl">3</span>
+            </div>
+            <h3 class="font-display text-xl font-bold text-navy mb-3">Get Your Listing Pack</h3>
+            <p class="text-charcoal/70 leading-relaxed">
+              Receive high-resolution before &amp; after images plus a cinematic transformation video. Ready for your property listings, website, and social media.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== DEMO VIDEO ========== -->
+  <section id="demo" class="py-16 md:py-24 bg-navy">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 fade-in">
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-4">
+          See the Transformation
+        </h2>
+        <p class="text-lg text-white/70 max-w-2xl mx-auto">
+          Watch how we transformed a Savills property listing into an aspirational vision of what it could become. <a href="https://search.savills.com/property-detail/gbclrscos250399" target="_blank" rel="noopener noreferrer" class="underline hover:text-white transition-colors">View on Savills</a>.
+        </p>
+      </div>
+      <div class="fade-in">
+        <div class="rounded-2xl overflow-hidden shadow-2xl bg-black relative group cursor-pointer video-wrapper">
+          <video
+            id="demo-video"
+            class="w-full"
+            preload="metadata"
+            playsinline
+          >
+            <source src="assets/video/savills-demo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <!-- Play Button Overlay -->
+          <div class="play-overlay absolute inset-0 flex items-center justify-center bg-black/20 transition-opacity duration-300">
+            <div class="w-20 h-20 md:w-24 md:h-24 bg-white/90 rounded-full flex items-center justify-center shadow-2xl group-hover:bg-white group-hover:scale-110 transition-all duration-300">
+              <svg class="w-8 h-8 md:w-10 md:h-10 text-navy ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BEFORE & AFTER GALLERY ========== -->
+  <section id="gallery" class="py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 fade-in">
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-navy mb-4">
+          Before &amp; After Gallery
+        </h2>
+        <p class="text-lg text-charcoal/70 max-w-2xl mx-auto">
+          Drag the slider to reveal the renovation potential. Every render is tailored to the property's layout and character.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Kitchen -->
+        <div class="fade-in">
+          <div class="rounded-xl overflow-hidden shadow-lg border border-cream-dark">
+            <img-comparison-slider class="w-full">
+              <img slot="first" src="assets/images-savills/before/before-kitchen.png" alt="Kitchen before renovation" class="w-full">
+              <img slot="second" src="assets/images-savills/after/after-kitchen.png" alt="Kitchen after renovation render" class="w-full">
+            </img-comparison-slider>
+          </div>
+          <p class="text-sm text-charcoal/60 mt-3 text-center">Kitchen &mdash; <span class="italic">artist's impression</span></p>
+        </div>
+
+        <!-- Bedroom -->
+        <div class="fade-in">
+          <div class="rounded-xl overflow-hidden shadow-lg border border-cream-dark">
+            <img-comparison-slider class="w-full">
+              <img slot="first" src="assets/images-savills/before/before-bedroom.png" alt="Bedroom before renovation" class="w-full">
+              <img slot="second" src="assets/images-savills/after/after-bedroom.png" alt="Bedroom after renovation render" class="w-full">
+            </img-comparison-slider>
+          </div>
+          <p class="text-sm text-charcoal/60 mt-3 text-center">Bedroom &mdash; <span class="italic">artist's impression</span></p>
+        </div>
+
+        <!-- Bathroom -->
+        <div class="fade-in">
+          <div class="rounded-xl overflow-hidden shadow-lg border border-cream-dark">
+            <img-comparison-slider class="w-full">
+              <img slot="first" src="assets/images-savills/before/before-bathroom.png" alt="Bathroom before renovation" class="w-full">
+              <img slot="second" src="assets/images-savills/after/after-bathroom.png" alt="Bathroom after renovation render" class="w-full">
+            </img-comparison-slider>
+          </div>
+          <p class="text-sm text-charcoal/60 mt-3 text-center">Bathroom &mdash; <span class="italic">artist's impression</span></p>
+        </div>
+
+        <!-- Living Area (Inward View) -->
+        <div class="fade-in">
+          <div class="rounded-xl overflow-hidden shadow-lg border border-cream-dark">
+            <img-comparison-slider class="w-full">
+              <img slot="first" src="assets/images-savills/before/before-inlooking.png" alt="Living area before renovation" class="w-full">
+              <img slot="second" src="assets/images-savills/after/after-inlooking.png" alt="Living area after renovation render" class="w-full">
+            </img-comparison-slider>
+          </div>
+          <p class="text-sm text-charcoal/60 mt-3 text-center">Living Area &mdash; <span class="italic">artist's impression</span></p>
+        </div>
+
+        <!-- Living Area (Outward View) -->
+        <div class="fade-in">
+          <div class="rounded-xl overflow-hidden shadow-lg border border-cream-dark">
+            <img-comparison-slider class="w-full">
+              <img slot="first" src="assets/images-savills/before/before-outlooking.png" alt="Living area before renovation" class="w-full">
+              <img slot="second" src="assets/images-savills/after/after-outlooking.png" alt="Living area after renovation render" class="w-full">
+            </img-comparison-slider>
+          </div>
+          <p class="text-sm text-charcoal/60 mt-3 text-center">Living Area (Garden View) &mdash; <span class="italic">artist's impression</span></p>
+        </div>
+
+        <!-- Front / Exterior -->
+        <div class="fade-in">
+          <div class="rounded-xl overflow-hidden shadow-lg border border-cream-dark">
+            <img-comparison-slider class="w-full">
+              <img slot="first" src="assets/images-savills/before/before-front.png" alt="Front exterior before renovation" class="w-full">
+              <img slot="second" src="assets/images-savills/after/after-front.png" alt="Front exterior after renovation render" class="w-full">
+            </img-comparison-slider>
+          </div>
+          <p class="text-sm text-charcoal/60 mt-3 text-center">Exterior &mdash; <span class="italic">artist's impression</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BENEFITS ========== -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 fade-in">
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-navy mb-4">
+          Why Leading Estate Agents Use RefurbVision
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="fade-in">
+          <div class="w-12 h-12 bg-teal/10 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="font-display text-lg font-bold text-navy mb-2">Achieve Stronger Sale Prices</h3>
+          <p class="text-charcoal/70 text-sm leading-relaxed">
+            Buyers who can see the finished product offer with more confidence. Renovation visualisations help drive competitive offers and stronger sale prices.
+          </p>
+        </div>
+
+        <div class="fade-in">
+          <div class="w-12 h-12 bg-teal/10 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="font-display text-lg font-bold text-navy mb-2">Elevate Your Listings</h3>
+          <p class="text-charcoal/70 text-sm leading-relaxed">
+            Add renovation visualisations directly into your property listings. Show vendors and buyers the potential beyond the property's current condition.
+          </p>
+        </div>
+
+        <div class="fade-in">
+          <div class="w-12 h-12 bg-teal/10 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+          </div>
+          <h3 class="font-display text-lg font-bold text-navy mb-2">Win More Instructions</h3>
+          <p class="text-charcoal/70 text-sm leading-relaxed">
+            Differentiate your agency. Offer Listing Packs with renovation visualisations that set you apart from competing agents.
+          </p>
+        </div>
+
+        <div class="fade-in">
+          <div class="w-12 h-12 bg-teal/10 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="font-display text-lg font-bold text-navy mb-2">Social Media Ready</h3>
+          <p class="text-charcoal/70 text-sm leading-relaxed">
+            Motion videos and comparison images formatted for Instagram, Facebook, and property portals. Content that gets shared.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PRICING ========== -->
+  <section id="pricing" class="py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 fade-in">
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-navy mb-4">
+          Simple, Transparent Pricing
+        </h2>
+        <p class="text-lg text-charcoal/70 max-w-2xl mx-auto">
+          No hidden fees. Every Listing Pack includes renovation visualisations, before &amp; after images, and a transformation video.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <!-- Single Property -->
+        <div class="fade-in">
+          <div class="bg-white rounded-2xl p-8 shadow-sm border border-cream-dark h-full flex flex-col">
+            <h3 class="font-display text-xl font-bold text-navy mb-2">Single Property</h3>
+            <p class="text-charcoal/60 text-sm mb-6">Perfect for individual listings</p>
+            <div class="mb-6">
+              <span class="text-4xl font-display font-bold text-navy">&pound;149</span>
+              <span class="text-charcoal/60 text-sm"> per property</span>
+            </div>
+            <ul class="space-y-3 mb-8 flex-grow">
+              <li class="flex items-start gap-3 text-sm text-charcoal/70">
+                <svg class="w-5 h-5 text-teal flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Up to 8 room renders
+              </li>
+              <li class="flex items-start gap-3 text-sm text-charcoal/70">
+                <svg class="w-5 h-5 text-teal flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Before &amp; after comparison images
+              </li>
+              <li class="flex items-start gap-3 text-sm text-charcoal/70">
+                <svg class="w-5 h-5 text-teal flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Cinematic transformation video
+              </li>
+              <li class="flex items-start gap-3 text-sm text-charcoal/70">
+                <svg class="w-5 h-5 text-teal flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                48-hour turnaround
+              </li>
+            </ul>
+            <a href="https://buy.stripe.com/00w8wP2Je4HEddkfuyfAc0o" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full px-6 py-3 border-2 border-navy/20 text-navy font-semibold rounded-lg hover:border-navy/40 transition-colors text-sm">
+              Get Started
+            </a>
+          </div>
+        </div>
+
+        <!-- Monthly Package - Featured -->
+        <div class="fade-in">
+          <div class="bg-navy rounded-2xl p-8 shadow-xl h-full flex flex-col relative">
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-gold text-navy text-xs font-bold rounded-full uppercase tracking-wider">
+              Most Popular
+            </div>
+            <h3 class="font-display text-xl font-bold text-white mb-2">Agency Listing Pack</h3>
+            <p class="text-white/60 text-sm mb-6">For estate agents with a regular pipeline</p>
+            <div class="mb-6">
+              <span class="text-4xl font-display font-bold text-white">&pound;399</span>
+              <span class="text-white/60 text-sm"> /month</span>
+            </div>
+            <ul class="space-y-3 mb-8 flex-grow">
+              <li class="flex items-start gap-3 text-sm text-white/80">
+                <svg class="w-5 h-5 text-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Up to 5 properties per month
+              </li>
+              <li class="flex items-start gap-3 text-sm text-white/80">
+                <svg class="w-5 h-5 text-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Up to 8 rooms per property
+              </li>
+              <li class="flex items-start gap-3 text-sm text-white/80">
+                <svg class="w-5 h-5 text-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Before &amp; after images + videos
+              </li>
+              <li class="flex items-start gap-3 text-sm text-white/80">
+                <svg class="w-5 h-5 text-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                24-hour priority turnaround
+              </li>
+              <li class="flex items-start gap-3 text-sm text-white/80">
+                <svg class="w-5 h-5 text-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Choice of renovation styles
+              </li>
+            </ul>
+            <a href="https://buy.stripe.com/fZudR94Rm6PM5KS5TYfAc0p" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full px-6 py-3 bg-gold text-navy font-semibold rounded-lg hover:bg-gold-light transition-colors text-sm">
+              Get Started
+            </a>
+          </div>
+        </div>
+
+        <!-- Agency Partnership -->
+        <div class="fade-in">
+          <div class="bg-white rounded-2xl p-8 shadow-sm border border-cream-dark h-full flex flex-col">
+            <h3 class="font-display text-xl font-bold text-navy mb-2">Agency Partnership</h3>
+            <p class="text-charcoal/60 text-sm mb-6">For high-volume estate agencies</p>
+            <div class="mb-6">
+              <span class="text-4xl font-display font-bold text-navy">Custom</span>
+            </div>
+            <ul class="space-y-3 mb-8 flex-grow">
+              <li class="flex items-start gap-3 text-sm text-charcoal/70">
+                <svg class="w-5 h-5 text-teal flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Unlimited properties per month
+              </li>
+              <li class="flex items-start gap-3 text-sm text-charcoal/70">
+                <svg class="w-5 h-5 text-teal flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                White-label branding option
+              </li>
+              <li class="flex items-start gap-3 text-sm text-charcoal/70">
+                <svg class="w-5 h-5 text-teal flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Dedicated account manager
+              </li>
+              <li class="flex items-start gap-3 text-sm text-charcoal/70">
+                <svg class="w-5 h-5 text-teal flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                API integration available
+              </li>
+              <li class="flex items-start gap-3 text-sm text-charcoal/70">
+                <svg class="w-5 h-5 text-teal flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Volume discounts
+              </li>
+            </ul>
+            <a href="#contact" class="inline-flex items-center justify-center w-full px-6 py-3 border-2 border-navy/20 text-navy font-semibold rounded-lg hover:border-navy/40 transition-colors text-sm">
+              Contact Us
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIALS ========== -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 fade-in">
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-navy mb-4">
+          Trusted by Estate Agents Across the UK
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div class="fade-in">
+          <div class="bg-cream rounded-2xl p-8">
+            <div class="flex gap-1 mb-4">
+              <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            </div>
+            <p class="text-charcoal/70 text-sm leading-relaxed mb-4">
+              &ldquo;We had a probate property that wasn't generating viewings. After adding RefurbVision renders to the listing, we had competitive offers within a week and it sold above asking price.&rdquo;
+            </p>
+            <div>
+              <p class="font-semibold text-navy text-sm">Sarah Mitchell</p>
+              <p class="text-charcoal/50 text-xs">Senior Negotiator, Hertfordshire</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="fade-in">
+          <div class="bg-cream rounded-2xl p-8">
+            <div class="flex gap-1 mb-4">
+              <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            </div>
+            <p class="text-charcoal/70 text-sm leading-relaxed mb-4">
+              &ldquo;The transformation videos are incredible for property marketing. Our social media engagement tripled. Vendors now specifically ask for RefurbVision Listing Packs when they instruct us.&rdquo;
+            </p>
+            <div>
+              <p class="font-semibold text-navy text-sm">James Crawford</p>
+              <p class="text-charcoal/50 text-xs">Branch Director, Surrey</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="fade-in">
+          <div class="bg-cream rounded-2xl p-8">
+            <div class="flex gap-1 mb-4">
+              <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            </div>
+            <p class="text-charcoal/70 text-sm leading-relaxed mb-4">
+              &ldquo;Game-changer for our listings. We now include RefurbVision renders on every property that needs work. Buyers come in higher because they can see the finished potential.&rdquo;
+            </p>
+            <div>
+              <p class="font-semibold text-navy text-sm">Helen Park</p>
+              <p class="text-charcoal/50 text-xs">Lettings &amp; Sales Manager, Essex</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FAQ ========== -->
+  <section id="faq" class="py-16 md:py-24">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 fade-in">
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-navy mb-4">
+          Frequently Asked Questions
+        </h2>
+      </div>
+
+      <div class="space-y-4 fade-in">
+        <!-- FAQ Item -->
+        <div class="faq-item border border-cream-dark rounded-xl overflow-hidden">
+          <button class="faq-toggle w-full flex items-center justify-between p-6 text-left" aria-expanded="false">
+            <span class="font-semibold text-navy pr-4">How long does it take to receive the renders and video?</span>
+            <svg class="faq-chevron w-5 h-5 text-charcoal/40 flex-shrink-0 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-content hidden px-6 pb-6">
+            <p class="text-charcoal/70 text-sm leading-relaxed">Standard turnaround is 48 hours from receiving your property photos. Agency Listing Pack clients receive priority 24-hour turnaround. Rush delivery (same day) is available on request for an additional fee.</p>
+          </div>
+        </div>
+
+        <div class="faq-item border border-cream-dark rounded-xl overflow-hidden">
+          <button class="faq-toggle w-full flex items-center justify-between p-6 text-left" aria-expanded="false">
+            <span class="font-semibold text-navy pr-4">What photos do you need from us?</span>
+            <svg class="faq-chevron w-5 h-5 text-charcoal/40 flex-shrink-0 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-content hidden px-6 pb-6">
+            <p class="text-charcoal/70 text-sm leading-relaxed">Standard listing photos work perfectly. Simply share the property listing link or upload JPG/PNG images of each room you'd like rendered. We recommend a minimum of 4 rooms for the best transformation video result.</p>
+          </div>
+        </div>
+
+        <div class="faq-item border border-cream-dark rounded-xl overflow-hidden">
+          <button class="faq-toggle w-full flex items-center justify-between p-6 text-left" aria-expanded="false">
+            <span class="font-semibold text-navy pr-4">Can I use these in property listings and on portals?</span>
+            <svg class="faq-chevron w-5 h-5 text-charcoal/40 flex-shrink-0 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-content hidden px-6 pb-6">
+            <p class="text-charcoal/70 text-sm leading-relaxed">Yes. All renders are clearly labelled as "Artist's Impression" to comply with Advertising Standards Authority requirements. This is standard practice for virtual staging and renovation visualisations in property listings, on portals like Rightmove and Zoopla, and in marketing materials.</p>
+          </div>
+        </div>
+
+        <div class="faq-item border border-cream-dark rounded-xl overflow-hidden">
+          <button class="faq-toggle w-full flex items-center justify-between p-6 text-left" aria-expanded="false">
+            <span class="font-semibold text-navy pr-4">Which areas do you cover?</span>
+            <svg class="faq-chevron w-5 h-5 text-charcoal/40 flex-shrink-0 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-content hidden px-6 pb-6">
+            <p class="text-charcoal/70 text-sm leading-relaxed">We work with estate agents across the entire UK. Since our service works from listing photos, location doesn't matter &mdash; just send us the property details and we'll deliver your Listing Pack.</p>
+          </div>
+        </div>
+
+        <div class="faq-item border border-cream-dark rounded-xl overflow-hidden">
+          <button class="faq-toggle w-full flex items-center justify-between p-6 text-left" aria-expanded="false">
+            <span class="font-semibold text-navy pr-4">What renovation styles can I choose from?</span>
+            <svg class="faq-chevron w-5 h-5 text-charcoal/40 flex-shrink-0 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-content hidden px-6 pb-6">
+            <p class="text-charcoal/70 text-sm leading-relaxed">We offer three core styles: <strong>Modern</strong> (clean lines, neutral palette, contemporary fixtures), <strong>Traditional</strong> (period-appropriate finishes, classic styling), and <strong>Premium</strong> (high-end materials, designer touches). You can also provide reference images for a bespoke style brief.</p>
+          </div>
+        </div>
+
+        <div class="faq-item border border-cream-dark rounded-xl overflow-hidden">
+          <button class="faq-toggle w-full flex items-center justify-between p-6 text-left" aria-expanded="false">
+            <span class="font-semibold text-navy pr-4">How realistic are the renovation renders?</span>
+            <svg class="faq-chevron w-5 h-5 text-charcoal/40 flex-shrink-0 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-content hidden px-6 pb-6">
+            <p class="text-charcoal/70 text-sm leading-relaxed">Our AI generates photorealistic renders that preserve the exact room geometry, dimensions, and natural lighting of the original photos. Every render is reviewed by our team for architectural plausibility before delivery. The result shows what a professional renovation could realistically achieve.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT / CTA ========== -->
+  <section id="contact" class="py-16 md:py-24 bg-navy">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16">
+        <!-- Copy -->
+        <div class="fade-in">
+          <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-6">
+            Ready to Upgrade Your Listings?
+          </h2>
+          <p class="text-lg text-white/70 leading-relaxed mb-8">
+            Send us your first property and see the difference a RefurbVision Listing Pack makes. No commitment required &mdash; try a single property and let the results speak for themselves.
+          </p>
+          <div class="space-y-4">
+            <div class="flex items-center gap-3 text-white/80">
+              <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              <span class="text-sm">refurbvision@manyforce.com</span>
+            </div>
+
+            <div class="flex items-center gap-3 text-white/80">
+              <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <span class="text-sm">Serving estate agents across the UK</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div class="fade-in">
+          <form id="contact-form" class="bg-white rounded-2xl p-8 shadow-xl">
+            <div class="space-y-5">
+              <div>
+                <label for="name" class="block text-sm font-medium text-navy mb-1.5">Your Name</label>
+                <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-cream-dark rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-teal/30 focus:border-teal transition-colors" placeholder="John Smith">
+              </div>
+              <div>
+                <label for="agency" class="block text-sm font-medium text-navy mb-1.5">Agency / Company</label>
+                <input type="text" id="agency" name="agency" class="w-full px-4 py-3 border border-cream-dark rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-teal/30 focus:border-teal transition-colors" placeholder="Smith & Partners Estate Agents">
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-medium text-navy mb-1.5">Email Address</label>
+                <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-cream-dark rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-teal/30 focus:border-teal transition-colors" placeholder="john@smithandpartners.co.uk">
+              </div>
+
+              <div>
+                <label for="message" class="block text-sm font-medium text-navy mb-1.5">Message / Property Details</label>
+                <textarea id="message" name="message" rows="3" class="w-full px-4 py-3 border border-cream-dark rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-teal/30 focus:border-teal transition-colors resize-none" placeholder="Paste your property listing link or tell us about the property..."></textarea>
+              </div>
+              <button type="submit" class="w-full px-6 py-3.5 bg-teal text-white font-semibold rounded-lg hover:bg-teal-dark transition-colors shadow-lg shadow-teal/20">
+                Send Enquiry
+              </button>
+              <p class="text-xs text-charcoal/50 text-center">We typically respond within 2 hours during business hours.</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="bg-navy-light py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Brand -->
+        <div>
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 bg-navy rounded-lg flex items-center justify-center border border-white/10">
+              <span class="text-gold font-display font-bold text-lg">R</span>
+            </div>
+            <span class="font-display font-bold text-xl text-white">RefurbVision</span>
+          </div>
+          <p class="text-white/50 text-sm leading-relaxed">
+            AI-powered property listing upgrades. Renovation visualisations, before &amp; after images, and transformation videos for premium estate agents across the UK.
+          </p>
+        </div>
+
+        <!-- Links -->
+        <div>
+          <h4 class="font-semibold text-white text-sm mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="#how-it-works" class="text-white/50 text-sm hover:text-white transition-colors">How It Works</a></li>
+            <li><a href="#gallery" class="text-white/50 text-sm hover:text-white transition-colors">Gallery</a></li>
+            <li><a href="#pricing" class="text-white/50 text-sm hover:text-white transition-colors">Pricing</a></li>
+            <li><a href="#faq" class="text-white/50 text-sm hover:text-white transition-colors">FAQ</a></li>
+            <li><a href="#contact" class="text-white/50 text-sm hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Coverage -->
+        <div>
+          <h4 class="font-semibold text-white text-sm mb-4">What's in a Listing Pack?</h4>
+          <p class="text-white/50 text-sm leading-relaxed">
+            Renovation visualisations &middot; Before &amp; after images &middot; Transformation video &middot; Delivered in 24&ndash;48 hours
+          </p>
+        </div>
+      </div>
+
+      <div class="border-t border-white/10 mt-10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-white/40 text-xs">&copy; 2026 RefurbVision, part of ManyForce Ltd. A company registered in England and Wales (Company No. 16812888). All rights reserved.</p>
+        <p class="text-white/40 text-xs">All renovation renders are artist's impressions and for illustrative purposes only.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JS -->
+  <script src="js/main.js"></script>
+</body>
+</html>
